@@ -1,0 +1,33 @@
+body {
+    background-color: black;
+    color: gray;
+    font-family: Arial, sans-serif;
+}
+
+header, nav, main, footer {
+    text-align: center;
+}
+
+nav a {
+    padding: 15px;
+    padding-bottom: 4px;
+    font-size: 1.8em;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    border-bottom: 2px orange solid;
+    font-size: 2em;
+    transition: .9s;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    font-size: .8em;
+    color: lightgray;
+}
