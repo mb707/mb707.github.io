@@ -78,3 +78,16 @@ ul {
 iframe {
     max-width: 100%;
 }
+
+
+figure img {
+    width: 500px;
+    max-width: 100%;
+}
+#csumb-logo {
+    width: 250px;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
