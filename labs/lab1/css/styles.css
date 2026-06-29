@@ -36,3 +36,38 @@ img {
     width: 500px;
     max-width: 100%;
 }
+table {
+    margin: 0 auto;
+}
+
+td {
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: orange;
+}
+
+#table-header {
+    background-color: #351a00;
+}
+
+.table-row {
+    background-color: #753900;
+}
+
+ul {
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.hobby {
+    color: orange;
+    font-weight: bold;
+}
+
+.current {
+    border-bottom: 2px orange solid;
+}
