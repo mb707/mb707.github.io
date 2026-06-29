@@ -71,3 +71,10 @@ ul {
 .current {
     border-bottom: 2px orange solid;
 }
+#content {
+    text-align: center;
+}
+
+iframe {
+    max-width: 100%;
+}
