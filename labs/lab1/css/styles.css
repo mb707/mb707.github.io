@@ -31,3 +31,8 @@ footer {
     font-size: .8em;
     color: lightgray;
 }
+
+img {
+    width: 500px;
+    max-width: 100%;
+}
