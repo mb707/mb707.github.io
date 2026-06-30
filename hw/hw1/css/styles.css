@@ -1,13 +1,15 @@
+/* Custom CSS for HW1. No external CSS framework used. */
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f7fb;
+    background-color: #eefcf9;
     color: #1d2733;
     line-height: 1.6;
 }
 
 header {
-    background-color: #172033;
+    background-color: #0f766e;
     color: white;
     text-align: center;
     padding: 35px 20px;
@@ -27,7 +29,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 15px;
-    background-color: #26364f;
+    background-color: #134e4a;
     padding: 12px;
 }
 
@@ -40,12 +42,12 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #4d6fa8;
+    background-color: #0d9488;
 }
 
 nav a.active {
-    background-color: #79a8ff;
-    color: #111827;
+    background-color: #99f6e4;
+    color: #0f172a;
     font-weight: bold;
 }
 
@@ -62,8 +64,9 @@ main {
     background-color: white;
     padding: 24px;
     margin-bottom: 25px;
-    border-radius: 14px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(15, 118, 110, 0.18);
+    border-left: 6px solid #14b8a6;
 }
 
 .hero {
@@ -72,7 +75,7 @@ main {
     align-items: center;
 }
 
-.hero article {
+.hero div {
     flex: 1;
 }
 
@@ -85,12 +88,12 @@ img {
     max-width: 420px;
     height: auto;
     border-radius: 12px;
-    border: 3px solid #d8e2f3;
+    border: 3px solid #99f6e4;
 }
 
 figcaption {
     font-size: 0.85rem;
-    color: #596273;
+    color: #4b635f;
     margin-top: 8px;
     text-align: center;
 }
@@ -103,8 +106,8 @@ figcaption {
 }
 
 h2 {
-    color: #26364f;
-    border-bottom: 2px solid #79a8ff;
+    color: #0f766e;
+    border-bottom: 2px solid #5eead4;
     padding-bottom: 6px;
 }
 
@@ -117,16 +120,17 @@ li {
 }
 
 .sources a {
-    color: #1f5fbf;
+    color: #0f766e;
+    font-weight: bold;
 }
 
 .sources a:hover {
-    color: #0b3470;
+    color: #115e59;
 }
 
 footer {
-    background-color: #172033;
-    color: #c9d6ea;
+    background-color: #134e4a;
+    color: #ccfbf1;
     text-align: center;
     font-size: 0.85rem;
     padding: 18px;
