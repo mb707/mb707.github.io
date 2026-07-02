@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div id="gameBox">
+        <h1>Guess the Number!</h1>
+
+        <h2>Guess a number between 1 and 99 in seven attempts!</h2>
+
+        <div id="main">
+            Enter a guess:
+            <input type="text" id="playerGuess" size="5">
+
+            <button id="guessBtn">Guess</button>
+            <button id="resetBtn">Reset</button>
+
+            <div id="feedback"></div>
+
+            <div id="attemptsLeft">
+                Attempts Left: <span id="attemptsRemaining">7</span>
+            </div>
+
+            <div>
+                Previous Guesses:
+                <span id="guesses"></span>
+            </div>
+
+            <div id="scoreBoard">
+                Wins: <span id="wins">0</span>
+                |
+                Losses: <span id="losses">0</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+    <hr>
+    <p>
+        CST336 Internet Programming. 2026&copy; Beebe <br>
+        <strong>Disclaimer:</strong> This webpage is used for academic purposes only.
+    </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

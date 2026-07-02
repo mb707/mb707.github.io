@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-image: url("../img/numbers.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#gameBox {
+    width: 75%;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 35px;
+    background-color: rgba(255, 255, 220, 0.9);
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+    color: #1446a0;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #222;
+    font-size: 1.8rem;
+}
+
+#main {
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+input {
+    font-size: 1.4rem;
+    padding: 8px;
+    text-align: center;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    margin: 8px;
+    border-radius: 8px;
+    border: 2px solid #222;
+    background-color: #ffdd33;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8cff32;
+}
+
+#feedback {
+    margin-top: 25px;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#attemptsLeft,
+#scoreBoard {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #1446a0;
+}
+
+#guesses {
+    color: #222;
+    font-weight: bold;
+}
