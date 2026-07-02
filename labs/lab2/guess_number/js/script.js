@@ -53,7 +53,7 @@ function checkGuess() {
     console.log("Attempts: " + attempts);
 
     if (guess == randomNumber) {
-        feedback.textContent = "You guessed it! You won!";
+        feedback.textContent = "You guessed it! You won! The number was " + randomNumber + ".";
         feedback.style.color = "darkgreen";
 
         wins++;
