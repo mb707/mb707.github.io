@@ -91,3 +91,17 @@ select {
   font-weight: bold;
   text-shadow: 1px 1px 2px white;
 }
+
+footer {
+  text-align: center;
+  color: white;
+  background-color: rgba(5, 15, 38, 0.9);
+  padding: 18px;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  border-top: 3px solid #b22234;
+}
+
+footer p {
+  margin: 0;
+}
