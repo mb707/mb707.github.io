@@ -20,10 +20,17 @@ body.bg-light {
 
 h1 {
   background: linear-gradient(90deg, #b22234, #ffffff, #3c3b6e) !important;
-  color: #102040 !important;
+  color: white !important;
   border: 3px solid #3c3b6e;
-  text-shadow: 1px 1px 2px white;
   letter-spacing: 1px;
+
+  -webkit-text-stroke: 2px #111827;
+  text-shadow:
+    2px 2px 0 #111827,
+    -2px 2px 0 #111827,
+    2px -2px 0 #111827,
+    -2px -2px 0 #111827,
+    0 0 8px rgba(255, 255, 255, 0.8);
 }
 
 .quiz-question {
