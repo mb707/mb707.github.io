@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.quiz-question {
+  background-color: white;
+  border: 1px solid #d8e2ea;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.feedbackBox {
+  padding: 8px;
+  min-height: 36px;
+}
+
+.mark-space {
+  display: inline-block;
+  width: 42px;
+}
+
+.mark-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+input[type="text"],
+select {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#validationFdbk {
+  margin-top: 25px;
+  padding: 10px;
+}
