@@ -45,9 +45,10 @@ h1 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.quiz-question h4 {
+.question-title {
   color: #102040;
   font-weight: bold;
+  font-size: 1.45rem;
 }
 
 .feedbackBox {

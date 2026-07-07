@@ -19,14 +19,14 @@
 
       <!-- Question 1 -->
       <div class="quiz-question">
-        <h4><span id="markImg1" class="mark-space"></span>1. What is the capital of California?</h4>
+        <h2 class="question-title"><span id="markImg1" class="mark-space"></span>1. What is the capital of California?</h2>
         <input type="text" id="q1" class="form-control" placeholder="Type your answer">
         <div id="q1Feedback" class="feedbackBox mt-2"></div>
       </div>
 
       <!-- Question 2 -->
       <div class="quiz-question">
-        <h4><span id="markImg2" class="mark-space"></span>2. What is the longest river in the United States?</h4>
+        <h2 class="question-title"><span id="markImg2" class="mark-space"></span>2. What is the longest river in the United States?</h2>
         <select id="q2" class="form-select">
           <option value="">Select One</option>
           <option value="ms">Mississippi River</option>
@@ -39,7 +39,7 @@
 
       <!-- Question 3 -->
       <div class="quiz-question">
-        <h4><span id="markImg3" class="mark-space"></span>3. Which presidents are carved into Mount Rushmore?</h4>
+        <h2 class="question-title"><span id="markImg3" class="mark-space"></span>3. Which presidents are carved into Mount Rushmore?</h2>
 
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" name="q3" id="q3Washington">
@@ -71,21 +71,21 @@
 
       <!-- Question 4 -->
       <div class="quiz-question">
-        <h4><span id="markImg4" class="mark-space"></span>4. What is the smallest US state?</h4>
+        <h2 class="question-title"><span id="markImg4" class="mark-space"></span>4. What is the smallest US state?</h2>
         <div id="q4Choices"></div>
         <div id="q4Feedback" class="feedbackBox mt-2"></div>
       </div>
 
       <!-- Question 5 -->
       <div class="quiz-question">
-        <h4><span id="markImg5" class="mark-space"></span>5. What state is the Grand Canyon in?</h4>
+        <h2 class="question-title"><span id="markImg5" class="mark-space"></span>5. What state is the Grand Canyon in?</h2>
         <input type="text" id="q5" class="form-control" placeholder="Type your answer">
         <div id="q5Feedback" class="feedbackBox mt-2"></div>
       </div>
 
       <!-- Question 6 -->
       <div class="quiz-question">
-        <h4><span id="markImg6" class="mark-space"></span>6. Which state is known as the Sunshine State?</h4>
+        <h2 class="question-title"><span id="markImg6" class="mark-space"></span>6. Which state is known as the Sunshine State?</h2>
         <select id="q6" class="form-select">
           <option value="">Select One</option>
           <option value="CA">California</option>
@@ -98,7 +98,7 @@
 
       <!-- Question 7 -->
       <div class="quiz-question">
-        <h4><span id="markImg7" class="mark-space"></span>7. Which Great Lake is completely within the United States?</h4>
+        <h2 class="question-title"><span id="markImg7" class="mark-space"></span>7. Which Great Lake is completely within the United States?</h2>
 
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="q7" id="q7Superior" value="Lake Superior">
@@ -120,7 +120,7 @@
 
       <!-- Question 8 -->
       <div class="quiz-question">
-        <h4><span id="markImg8" class="mark-space"></span>8. Which of these are contiguous West Coast states?</h4>
+        <h2 class="question-title"><span id="markImg8" class="mark-space"></span>8. Which of these are contiguous West Coast states?</h2>
 
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" name="q8" id="q8California">
@@ -152,35 +152,34 @@
 
       <!-- Question 9 -->
       <div class="quiz-question">
-        <h4><span id="markImg9" class="mark-space"></span>9. What region of the United States is New Mexico usually considered part of?</h4>
+        <h2 class="question-title"><span id="markImg9" class="mark-space"></span>9. What region of the United States is New Mexico usually considered part of?</h2>
         <div id="q9Choices"></div>
         <div id="q9Feedback" class="feedbackBox mt-2"></div>
       </div>
 
       <!-- Question 10 -->
       <div class="quiz-question">
-        <h4><span id="markImg10" class="mark-space"></span>10. What is the capital of Texas?</h4>
+        <h2 class="question-title"><span id="markImg10" class="mark-space"></span>10. What is the capital of Texas?</h2>
         <input type="text" id="q10" class="form-control" placeholder="Type your answer">
         <div id="q10Feedback" class="feedbackBox mt-2"></div>
       </div>
 
-      <h3 id="validationFdbk" class="bg-danger text-white text-center rounded"></h3>
+      <div id="validationFdbk" class="bg-danger text-white text-center rounded" role="alert"></div>
 
       <div class="text-center mt-4">
         <button type="button" class="btn btn-outline-primary btn-lg">Submit Quiz</button>
       </div>
 
-      <h2 id="totalScore" class="text-center mt-4"></h2>
-      <h3 id="congratsMessage" class="text-center text-success"></h3>
-      <h3 id="totalAttempts" class="text-center text-secondary"></h3>
+      <div id="totalScore" class="text-center mt-4 fs-2 fw-bold"></div>
+      <div id="congratsMessage" class="text-center text-success fs-3 fw-bold"></div>
+      <div id="totalAttempts" class="text-center text-secondary fs-3"></div>
     </section>
   </main>
 
-  <script src="js/script.js"></script>
-
-<footer>
+  <footer class="text-center text-white py-3">
     <p>&copy; 2026 Morgan Beebe | CST336 Internet Programming</p>
-</footer>
+  </footer>
 
+  <script src="js/script.js"></script>
 </body>
 </html>
