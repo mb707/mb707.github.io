@@ -204,8 +204,16 @@ function displayPokemon(pokemon, species) {
   document.querySelector("#pokemonName").textContent = formatName(pokemon.name);
 
   const pokemonImage = document.querySelector("#pokemonImage");
-  pokemonImage.src = artwork || "";
-  pokemonImage.alt = artwork ? `Official artwork of ${formatName(pokemon.name)}` : "Artwork unavailable";
+
+  if (artwork) {
+    pokemonImage.src = artwork;
+    pokemonImage.alt = `Official artwork of ${formatName(pokemon.name)}`;
+    pokemonImage.hidden = false;
+  } else {
+    pokemonImage.removeAttribute("src");
+    pokemonImage.alt = "Artwork unavailable";
+    pokemonImage.hidden = true;
+  }
 
   document.querySelector("#flavorText").textContent =
     englishFlavor || "No English Pokédex description is available for this Pokémon.";
