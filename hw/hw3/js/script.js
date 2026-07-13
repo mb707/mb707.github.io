@@ -203,14 +203,14 @@ function displayPokemon(pokemon, species) {
   document.querySelector("#pokemonCategory").textContent = englishGenus?.genus || "Pokémon";
   document.querySelector("#pokemonName").textContent = formatName(pokemon.name);
 
-  const pokemonImage = document.querySelector("#pokemonImage");
+  const pokemonImage = document.querySelector("#data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==");
 
   if (artwork) {
     pokemonImage.src = artwork;
     pokemonImage.alt = `Official artwork of ${formatName(pokemon.name)}`;
     pokemonImage.hidden = false;
   } else {
-    pokemonImage.removeAttribute("src");
+    pokemonImage.removeAttribute("placeholderImage");
     pokemonImage.alt = "Artwork unavailable";
     pokemonImage.hidden = true;
   }

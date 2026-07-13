@@ -60,7 +60,7 @@
       </div>
     </section>
 
-    <section id="pokemonResult" class="pokemon-result" aria-live="polite" aria-labelledby="pokemonName" hidden>
+    <div id="pokemonResult" class="pokemon-result" aria-live="polite" aria-labelledby="pokemonName" hidden>
       <article class="pokemon-card">
         <div class="identity-panel">
           <div class="dex-number" id="dexNumber">#0000</div>
@@ -70,7 +70,7 @@
 
           <div class="artwork-frame">
             <div class="scan-ring" aria-hidden="true"></div>
-            <img id="pokemonImage" alt="Pokémon artwork" hidden>
+            <img id="pokemonImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Pokémon artwork" hidden>
           </div>
 
           <p id="flavorText" class="flavor-text"></p>
@@ -123,18 +123,17 @@
           </section>
         </div>
       </article>
-    </section>
+    </div>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>
       Pokémon data provided by
       <a href="https://pokeapi.co/" target="_blank" rel="noopener noreferrer">PokéAPI</a>.
       Educational project; not affiliated with or endorsed by Pokémon.
     </p>
-  </footer>
-  <footer class="text-center py-3">
-    <p>&copy; 2026 Morgan Beebe | CST 336 Internet Programming</p>
+
+  < p>&copy; 2026 Morgan Beebe | CST 336 Internet Programming</p>
   </footer>
 </body>
 </html>
