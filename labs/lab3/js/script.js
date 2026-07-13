@@ -1,3 +1,12 @@
+console.log("script.js connected");
+document.querySelector("#zip").addEventListener("change", displayCity);
+document.querySelector("#state").addEventListener("change", displayCounties);
+document.querySelector("#username").addEventListener("change", checkUsername);
+document.querySelector("#password").addEventListener("click", suggestPassword);
+document.querySelector("#signupForm").addEventListener("submit", validateForm);
+
+loadStates();
+
 /**
  * Retrieve city, latitude, and longitude using a ZIP code.
  */
@@ -14,22 +23,11 @@ async function displayCity() {
   latitude.textContent = "";
   longitude.textContent = "";
 
-  if (zipCode.length === 0) {
-    zipError.textContent = "ZIP code required";
-    zipError.style.color = "red";
-    return;
-  }
-
   try {
     const url =
-      `https://csumb.space/api/cityInfoAPI.php?zip=${encodeURIComponent(zipCode)}`;
+      `https://csumb.space/api/cityInfoAPI.php?zip=${zipCode}`;
 
     const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`ZIP API error: ${response.status}`);
-    }
-
     const data = await response.json();
 
     if (data === false) {
@@ -64,11 +62,6 @@ async function loadStates() {
   try {
     const url = "https://csumb.space/api/allStatesAPI.php";
     const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`State API error: ${response.status}`);
-    }
-
     const data = await response.json();
 
     for (const item of data) {
@@ -101,48 +94,29 @@ async function displayCounties() {
 
   countyMenu.textContent = "";
 
-  if (state.length === 0) {
-    const defaultOption = document.createElement("option");
-    defaultOption.value = "";
-    defaultOption.textContent = "Select a state first";
-
-    countyMenu.appendChild(defaultOption);
+  if (state === "") {
+    const option = document.createElement("option");
+    option.value = "";
+    option.textContent = "Select a state first";
+    countyMenu.appendChild(option);
     return;
   }
 
-  const loadingOption = document.createElement("option");
-  loadingOption.value = "";
-  loadingOption.textContent = "Loading counties...";
-
-  countyMenu.appendChild(loadingOption);
-
   try {
     const url =
-      `https://csumb.space/api/countyListAPI.php?state=${encodeURIComponent(state)}`;
+      `https://csumb.space/api/countyListAPI.php?state=${state}`;
 
     const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`County API error: ${response.status}`);
-    }
-
     const data = await response.json();
-
-    countyMenu.textContent = "";
 
     const defaultOption = document.createElement("option");
     defaultOption.value = "";
     defaultOption.textContent = "Select One";
-
     countyMenu.appendChild(defaultOption);
 
     for (const item of data) {
       const option = document.createElement("option");
 
-      /*
-       * The county API may retunr county data as an object.
-       * item.county is the county name used by the CSUMB API.
-       */
       option.value = item.county;
       option.textContent = item.county;
 
@@ -151,12 +125,9 @@ async function displayCounties() {
   } catch (error) {
     console.error(error);
 
-    countyMenu.textContent = "";
-
     const errorOption = document.createElement("option");
     errorOption.value = "";
     errorOption.textContent = "Unable to load counties";
-
     countyMenu.appendChild(errorOption);
   }
 }
