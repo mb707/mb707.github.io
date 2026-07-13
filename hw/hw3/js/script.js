@@ -205,37 +205,66 @@ function displayPokemon(pokemon, species) {
     pokemon.sprites.other?.home?.front_default ||
     pokemon.sprites.front_default;
 
-  const englishGenus = species.genera.find((entry) => entry.language.name === "en");
-  const englishFlavor = getEnglishFlavorText(species.flavor_text_entries);
-  const primaryType = pokemon.types[0]?.type.name || "normal";
+  const englishGenus = species.genera.find(
+    (entry) => entry.language.name === "en"
+  );
+
+  const englishFlavor = getEnglishFlavorText(
+    species.flavor_text_entries
+  );
+
+  const primaryType =
+    pokemon.types[0]?.type.name || "normal";
 
   applyTypeTheme(primaryType);
 
-  document.querySelector("#dexNumber").textContent = `#${String(pokemon.id).padStart(4, "0")}`;
-  document.querySelector("#pokemonCategory").textContent = englishGenus?.genus || "Pokémon";
-  document.querySelector("#pokemonName").textContent = formatName(pokemon.name);
+  document.querySelector("#dexNumber").textContent =
+    `#${String(pokemon.id).padStart(4, "0")}`;
 
-  const pokemonImage = document.querySelector("#data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==");
+  document.querySelector("#pokemonCategory").textContent =
+    englishGenus?.genus || "Pokémon";
+
+  document.querySelector("#pokemonName").textContent =
+    formatName(pokemon.name);
+
+  const pokemonImage =
+    document.querySelector("#pokemonImage");
+
+  const placeholderImage =
+    "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
 
   if (artwork) {
     pokemonImage.src = artwork;
-    pokemonImage.alt = `Official artwork of ${formatName(pokemon.name)}`;
+    pokemonImage.alt =
+      `Official artwork of ${formatName(pokemon.name)}`;
     pokemonImage.hidden = false;
   } else {
-    pokemonImage.removeAttribute("placeholderImage");
+    pokemonImage.src = placeholderImage;
     pokemonImage.alt = "Artwork unavailable";
     pokemonImage.hidden = true;
   }
 
   document.querySelector("#flavorText").textContent =
-    englishFlavor || "No English Pokédex description is available for this Pokémon.";
+    englishFlavor ||
+    "No English Pokédex description is available for this Pokémon.";
 
-  document.querySelector("#pokemonHeight").textContent = `${(pokemon.height / 10).toFixed(1)} m`;
-  document.querySelector("#pokemonWeight").textContent = `${(pokemon.weight / 10).toFixed(1)} kg`;
-  document.querySelector("#baseExperience").textContent = pokemon.base_experience ?? "Unknown";
-  document.querySelector("#pokemonHabitat").textContent = formatName(species.habitat?.name || "unknown");
-  document.querySelector("#pokemonGeneration").textContent = formatGeneration(species.generation.name);
-  document.querySelector("#captureRate").textContent = `${species.capture_rate} / 255`;
+  document.querySelector("#pokemonHeight").textContent =
+    `${(pokemon.height / 10).toFixed(1)} m`;
+
+  document.querySelector("#pokemonWeight").textContent =
+    `${(pokemon.weight / 10).toFixed(1)} kg`;
+
+  document.querySelector("#baseExperience").textContent =
+    pokemon.base_experience ?? "Unknown";
+
+  document.querySelector("#pokemonHabitat").textContent =
+    formatName(species.habitat?.name || "unknown");
+
+  document.querySelector("#pokemonGeneration").textContent =
+    formatGeneration(species.generation.name);
+
+  document.querySelector("#captureRate").textContent =
+    `${species.capture_rate} / 255`;
 
   displayTypes(pokemon.types);
   displayAbilities(pokemon.abilities);
@@ -244,7 +273,11 @@ function displayPokemon(pokemon, species) {
 
   messageArea.hidden = true;
   pokemonResult.hidden = false;
-  pokemonResult.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  pokemonResult.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
 
 /**
