@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search the PokéAPI to view Pokémon artwork, types, abilities, statistics, and species information.">
+  <title>Pokémon Research Terminal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <p class="eyebrow">CST 336 • HW 3 • Fetch and Web APIs</p>
+      <h1>Pokémon Research Terminal</h1>
+      <p class="subtitle">
+        Enter a Pokémon name or National Pokédex number to retrieve live data from PokéAPI.
+      </p>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="search-panel" aria-labelledby="search-heading">
+      <div>
+        <h2 id="search-heading">Begin a Pokédex Search</h2>
+        <p>Try <strong>Pikachu</strong>, <strong>Charizard</strong>, or <strong>25</strong>.</p>
+      </div>
+
+      <form id="pokemonForm" class="search-form">
+        <label for="pokemonSearch">Pokémon name or number</label>
+        <div class="input-row">
+          <input
+            type="text"
+            id="pokemonSearch"
+            name="pokemonSearch"
+            placeholder="e.g., bulbasaur or 1"
+            autocomplete="off"
+            required
+          >
+          <button type="submit" class="primary-button">Research Pokémon</button>
+          <button type="button" id="randomButton" class="secondary-button">Random Pokémon</button>
+        </div>
+      </form>
+
+      <div id="historySection" class="history-section" hidden>
+        <h3>Recent Research</h3>
+        <div id="historyButtons" class="history-buttons"></div>
+      </div>
+    </section>
+
+    <section id="messageArea" class="message-area" aria-live="polite">
+      <div class="welcome-card">
+        <div class="scanner-icon" aria-hidden="true">⌁</div>
+        <h2>Research terminal ready</h2>
+        <p>Search for a Pokémon to generate a complete research profile.</p>
+      </div>
+    </section>
+
+    <section id="pokemonResult" class="pokemon-result" aria-live="polite" hidden>
+      <article class="pokemon-card">
+        <div class="identity-panel">
+          <div class="dex-number" id="dexNumber">#0000</div>
+          <p class="category" id="pokemonCategory">Pokémon</p>
+          <h2 id="pokemonName">Pokémon Name</h2>
+          <div id="typeBadges" class="type-badges"></div>
+
+          <div class="artwork-frame">
+            <div class="scan-ring" aria-hidden="true"></div>
+            <img id="pokemonImage" src="" alt="">
+          </div>
+
+          <p id="flavorText" class="flavor-text"></p>
+        </div>
+
+        <div class="data-panel">
+          <section class="data-section" aria-labelledby="overviewHeading">
+            <h3 id="overviewHeading">Profile Overview</h3>
+            <dl class="overview-grid">
+              <div>
+                <dt>Height</dt>
+                <dd id="pokemonHeight">—</dd>
+              </div>
+              <div>
+                <dt>Weight</dt>
+                <dd id="pokemonWeight">—</dd>
+              </div>
+              <div>
+                <dt>Base Experience</dt>
+                <dd id="baseExperience">—</dd>
+              </div>
+              <div>
+                <dt>Habitat</dt>
+                <dd id="pokemonHabitat">—</dd>
+              </div>
+              <div>
+                <dt>Generation</dt>
+                <dd id="pokemonGeneration">—</dd>
+              </div>
+              <div>
+                <dt>Capture Rate</dt>
+                <dd id="captureRate">—</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="data-section" aria-labelledby="abilityHeading">
+            <h3 id="abilityHeading">Abilities</h3>
+            <div id="abilityList" class="pill-list"></div>
+          </section>
+
+          <section class="data-section" aria-labelledby="statsHeading">
+            <h3 id="statsHeading">Base Statistics</h3>
+            <div id="statsList" class="stats-list"></div>
+          </section>
+
+          <section class="data-section" aria-labelledby="movesHeading">
+            <h3 id="movesHeading">Sample Moves</h3>
+            <div id="movesList" class="pill-list"></div>
+          </section>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Pokémon data provided by
+      <a href="https://pokeapi.co/" target="_blank" rel="noopener noreferrer">PokéAPI</a>.
+      Educational project; not affiliated with or endorsed by Pokémon.
+    </p>
+  </footer>
+  <footer class="text-center py-3">
+    <p>&copy; 2026 Morgan Beebe | CST 336 Internet Programming</p>
+  </footer>
+</body>
+</html>
