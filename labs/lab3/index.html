@@ -36,6 +36,7 @@
             id="fName"
             name="fName"
             class="form-control"
+            required
           >
         </div>
 
@@ -47,6 +48,7 @@
             id="lName"
             name="lName"
             class="form-control"
+            required
           >
         </div>
 
@@ -72,6 +74,7 @@
               name="gender"
               value="f"
               class="form-check-input"
+              required
             >
             <label for="genderFemale" class="form-check-label">Female</label>
           </div>
@@ -88,6 +91,9 @@
             name="zip"
             class="form-control"
             maxlength="5"
+            pattern="[0-9]{5}"
+            title="Enter a five-digit ZIP code"
+            required
             >
 
           <span id="zipError" class="validation-message"></span>
@@ -115,7 +121,7 @@
         <div class="mb-3">
           <label for="state" class="form-label">State</label>
 
-          <select id="state" name="state" class="form-select">
+          <select id="state" name="state" class="form-select" required>
             <option value="">Loading states...</option>
           </select>
         </div>
@@ -124,7 +130,7 @@
         <div class="mb-3">
           <label for="county" class="form-label">County</label>
 
-          <select id="county" name="county" class="form-select">
+          <select id="county" name="county" class="form-select" required>
             <option value="">Select a state first</option>
           </select>
         </div>
@@ -140,6 +146,7 @@
             id="username"
             name="username"
             class="form-control"
+            required
           >
 
           <span id="usernameError" class="validation-message"></span>
@@ -154,6 +161,7 @@
             id="password"
             name="password"
             class="form-control"
+            required
           >
 
           <div id="suggestedPassword" class="suggested-password"></div>
@@ -170,6 +178,7 @@
             id="passwordAgain"
             name="passwordAgain"
             class="form-control"
+            required
           >
 
           <span id="passwordError" class="validation-message"></span>
