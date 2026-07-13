@@ -110,16 +110,28 @@ async function loadPokemon(query) {
     const species = await getSpeciesData(pokemon.species.url);
 
     displayPokemon(pokemon, species);
-    saveToHistory(pokemon.name);
-    renderHistory();
+
+    // History problems should not prevent the Pokémon from displaying.
+    try {
+      saveToHistory(pokemon.name);
+      renderHistory();
+    } catch (historyError) {
+      console.warn("Recent-search history failed:", historyError);
+    }
+
     searchInput.value = pokemon.name;
+
   } catch (error) {
-    console.error(error);
+    console.error("Pokémon lookup failed:", error);
 
     if (error.message === "NOT_FOUND") {
-      showError(`No Pokémon was found for “${query}.” Check the spelling or try a Pokédex number.`);
+      showError(
+        `No Pokémon was found for “${query}.” Check the spelling or try a valid National Pokédex number.`
+      );
     } else {
-      showError("The research terminal could not contact PokéAPI. Please check your connection and try again.");
+      showError(
+        `Research error: ${error.message}`
+      );
     }
   } finally {
     setLoading(false);
